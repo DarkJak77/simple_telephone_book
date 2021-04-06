@@ -1,5 +1,3 @@
-// test change
-
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 
@@ -7,7 +5,7 @@ const path = require('path')
 ipcMain.on('toMain',  (event, ...args) => {
   let options = {
     type: 'info',
-    title: 'Piccolo Matricolista',
+    title: 'Rubrica',
     message: args[0],
   };
 
@@ -19,8 +17,10 @@ ipcMain.on('toMain',  (event, ...args) => {
 })
 
 function createWindow() {
-  const win = new BrowserWindow({
-    title: 'Piccolo Matricolista',
+  
+  let dev = 1
+  let option = {
+    title: 'Rubrica',
     width: 800,
     height: 600,
     center: true,
@@ -30,10 +30,21 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, "preload.js")
     }
-  })
+  }
+
+  // Dev 1 == Activate
+  if (dev == 1) {
+    option.resizable = true
+    option.fullscreenable = true
+  }
+
+  const win = new BrowserWindow(option)
 
   win.setMenu(null)
-  //win.webContents.openDevTools();
+
+  if (dev == 1) {
+    win.webContents.openDevTools();
+  }
   
   win.loadFile('./home/home.html')
 

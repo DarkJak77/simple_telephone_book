@@ -33,8 +33,8 @@ function tabella() {
       .replaceAll('{v}', v['nome'])
       .replaceAll('{numero}', v['numero'])
       .replaceAll('{info}', v['info'])
-      .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Edit</button>' +
-        '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Delete</button><div id="space"></div><button onclick={down({index})}>▼</button>' +
+      .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Modifica</button>' +
+        '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Elimina</button><div id="space"></div><button onclick={down({index})}>▼</button>' +
         '<div id="space"></div><button onclick={up({index})}>▲</button></div>')
       .replaceAll('{dati}', store.data.provincia + '_?' + store.data.comune + '_?' + store.data.tipologia + '_?' + v['nome'] + '_?' +
         v['numero'] + '_?' + v['info'])
@@ -50,33 +50,33 @@ function input_refresh() {
 function move_array(index, type, value) {
   let new_array = []
 
-    const element = file.data[value[0]][value[1]][value[2]]
+  const element = file.data[value[0]][value[1]][value[2]]
 
-    if (type == 1) {
-      for (let ind = 0; ind < file.data[value[0]][value[1]][value[2]].length; ind++) {
-        if (ind == index){
-          new_array.push(element[ind+1])
-          new_array.push(element[ind])
-          ind++
-        } else {
-          new_array.push(element[ind])
-        }
+  if (type == 1) {
+    for (let ind = 0; ind < file.data[value[0]][value[1]][value[2]].length; ind++) {
+      if (ind == index) {
+        new_array.push(element[ind + 1])
+        new_array.push(element[ind])
+        ind++
+      } else {
+        new_array.push(element[ind])
       }
     }
+  }
 
-    if (type == 0) {
-      for (let inde = 0; inde < file.data[value[0]][value[1]][value[2]].length; inde++) {
-        if (inde == index-1){
-          new_array.push(element[inde +1])
-          new_array.push(element[inde])
-          inde++
-        } else {
-          new_array.push(element[inde])
-        }
+  if (type == 0) {
+    for (let inde = 0; inde < file.data[value[0]][value[1]][value[2]].length; inde++) {
+      if (inde == index - 1) {
+        new_array.push(element[inde + 1])
+        new_array.push(element[inde])
+        inde++
+      } else {
+        new_array.push(element[inde])
       }
     }
+  }
 
-    file.data[value[0]][value[1]][value[2]] = new_array
+  file.data[value[0]][value[1]][value[2]] = new_array
 }
 
 contextBridge.exposeInMainWorld(
@@ -164,6 +164,92 @@ contextBridge.exposeInMainWorld(
   render_tabella: () => {
     tabella()
     input_refresh()
+  },
+  search_function: () => {
+    let to_find_key = ['nome', 'numero', 'info']
+    let to_find_value = []
+
+    for (let index = 0; index < to_find_key.length; index++) {
+      const element = window.document.getElementById(to_find_key[index]).value
+      if (element != '') {
+        if (!(to_find_value.includes(element))) {
+          to_find_value.push(element)
+        }
+      }
+    }
+
+    let find = []
+
+    Object.values(file.data).map(
+      function (v, prov) {
+        Object.values(v).map(
+          function (v, com) {
+            Object.values(v).map(
+              function (v, tip) {
+                Object.values(v).map(
+                  function (v, index) {
+                    const check = Object.values(v).map((e) => e.toLowerCase())
+                    for (let i = 0; i < to_find_value.length; i++) {
+
+                      for (let ind = 0; ind < check.length; ind++) {
+                        if (check[ind].includes(to_find_value[i])) {
+                          {
+                            let push_data = {
+                              "provincia": Object.keys(file.data)[prov],
+                              "comune": Object.keys(Object.values(file.data)[prov])[com],
+                              "tipologia": Object.keys(Object.values(Object.values(file.data)[prov])[com])[tip],
+                              "data": v
+                            }
+                            if (find.includes(push_data)) {
+
+                            } else {
+                              find.push(push_data)
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                )
+              }
+            )
+          }
+        )
+      }
+    )
+
+    for (let index = 0; index < find.length; index++) {
+      const element = find[index];
+      let count = 0
+
+      for (let i = 0; i < find.length; i++) {
+        const e = find[i];
+        if (element.data.nome == e.data.nome &
+          element.data.numero == e.data.numero &
+          element.data.info == e.data.info &
+          element.provincia == e.provincia &
+          element.comune == e.comune &
+          element.tipologia == e.tipologia) {
+          count += 1
+        }  
+      }
+      if (count > 1) {
+        find.splice(index,1)
+      }
+    }
+    input_refresh()
+    document.getElementById('tab').innerHTML = find.map((v, index) =>
+
+      "<tr><td>{v}</td><td>{numero}</td><td>{info}</td><td>{edit}</td></tr>"
+        .replaceAll('{v}', find[index].comune + '---' + find[index].data.nome)
+        .replaceAll('{numero}', find[index].data.numero)
+        .replaceAll('{info}', find[index].data.info)
+        .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Modifica</button>' +
+        '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Elimina</button></div>')
+      .replaceAll('{dati}', find[index].provincia + '_?' + find[index].comune + '_?' + find[index].tipologia + '_?' + find[index].data['nome'] + '_?' +
+      find[index].data['numero'] + '_?' + find[index].data['info'])
+      .replaceAll('{index}', index)
+    ).join(' ')
   },
   save_choice: (type, choice) => {
     if (type == 'provincia') {

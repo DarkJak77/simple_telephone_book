@@ -18,7 +18,7 @@ ipcMain.on('toMain',  (event, ...args) => {
 
 function createWindow() {
   
-  let dev = 1
+  let dev = 0
   let option = {
     title: 'Rubrica',
     width: 800,

@@ -33,7 +33,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "piccolo_matricolista"
+            "name": "simple_telephone_book"
           }
         },
         {

@@ -1,0 +1,1433 @@
+
+
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: 'Open Sans', serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+      }
+
+      
+
+      .home {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: auto;
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 1);
+      width: 780.00px;
+    height: 550.00px;
+    left: 0px;
+    top: 0px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 32.00px;
+    top: 35.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest .baseFill {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 120, 215, 1);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(0, 0, 0, 0);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -0.50px;
+    top: -0.50px;
+    right: 1.50px;
+    bottom: 1.50px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest .splitButton {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: -28px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      line-height: 20.00px;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 14.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 56.00px;
+    height: 19.00px;
+    left: 50%;
+    top: 6.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 740.00px;
+    height: 380.00px;
+    left: 20.00px;
+    top: 150.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb270587b {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb270587b .baseFill815c9a3f {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(0, 120, 215, 1);
+      stroke: rgba(0, 0, 0, 0);
+          stroke-width: 1.00px;
+          stroke-linecap: butt;
+      box-shadow: none;
+      width: 145.00px;
+    height: 2.00px;
+    top: 44.18px;
+    right: 17.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb270587b .rettangolo1 {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 1);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 226.00px;
+    top: 35.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest8512f830 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest8512f830 .baseFillfaee9fc0 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 120, 215, 1);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(0, 0, 0, 0);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -0.50px;
+    top: -0.50px;
+    right: 1.50px;
+    bottom: 1.50px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRest8512f830 .splitButton50477b49 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: -26px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      line-height: 20.00px;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 14.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 52.00px;
+    height: 19.00px;
+    left: 50%;
+    top: 6.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 420.00px;
+    top: 35.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb62d8deb {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb62d8deb .baseFill262d7e4b {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 120, 215, 1);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(0, 0, 0, 0);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -0.50px;
+    top: -0.50px;
+    right: 1.50px;
+    bottom: 1.50px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697 .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb62d8deb .splitButton0b94f9cc {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: -28.999984741210938px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      line-height: 20.00px;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 14.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 58.00px;
+    height: 19.00px;
+    left: 50%;
+    top: 6.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 614.00px;
+    top: 35.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover .buttonBase {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(0, 0, 0, 0);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -0.50px;
+    top: -0.50px;
+    right: 1.50px;
+    bottom: 1.50px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover .hoverBorder {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom-color: rgba(0, 0, 0, 0.4);
+      border-bottom-style: solid;
+      border-bottom-width: 2.00px;
+      border-left-color: rgba(0, 0, 0, 0.4);
+      border-left-style: solid;
+      border-left-width: 2.00px;
+      border-right-color: rgba(0, 0, 0, 0.4);
+      border-right-style: solid;
+      border-right-width: 2.00px;
+      border-top-color: rgba(0, 0, 0, 0.4);
+      border-top-style: solid;
+      border-top-width: 2.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover .cerca {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      line-height: 14.00px;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 0.2);
+      -webkit-text-stroke: 1.00px rgba(0, 120, 215, 1);
+      font-size: 12.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      width: 33.00px;
+    height: 17.00px;
+    left: 47.00px;
+    top: 9.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover2951ad12 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 614.00px;
+    top: 92.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover2951ad12 .buttonBase5a7b58e6 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-bottom-color: rgba(0, 0, 0, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(0, 0, 0, 0);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(0, 0, 0, 0);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(0, 0, 0, 0);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -0.50px;
+    top: -0.50px;
+    right: 1.50px;
+    bottom: 1.50px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover2951ad12 .hoverBorder37ffe4d1 {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom-color: rgba(0, 0, 0, 0.4);
+      border-bottom-style: solid;
+      border-bottom-width: 2.00px;
+      border-left-color: rgba(0, 0, 0, 0.4);
+      border-left-style: solid;
+      border-left-width: 2.00px;
+      border-right-color: rgba(0, 0, 0, 0.4);
+      border-right-style: solid;
+      border-right-width: 2.00px;
+      border-top-color: rgba(0, 0, 0, 0.4);
+      border-top-style: solid;
+      border-top-width: 2.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover2951ad12 .salva {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      line-height: 14.00px;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 0.2);
+      -webkit-text-stroke: 1.00px rgba(0, 120, 215, 1);
+      font-size: 12.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      width: 33.00px;
+    height: 17.00px;
+    left: 47.00px;
+    top: 9.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 32.00px;
+    top: 92.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled .elementsInputBoxBase {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+
+.home .textTextBoxNoHeaderDisabled .elementsInputBoxBase .textboxFrame {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(0, 0, 0, 0.2);
+      stroke: rgba(0, 0, 0, 0);
+          stroke-width: 1.00px;
+          stroke-linecap: butt;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -1.00px;
+    top: -1.00px;
+    right: -1.00px;
+    bottom: -1.00px;
+
+}
+
+
+.home .textTextBoxNoHeaderDisabled .hintText {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      line-height: 17.00px;
+      letter-spacing: 0.00px;
+      color: rgba(0, 0, 0, 0.4);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 12.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 33.00px;
+    height: 16.00px;
+    left: 40.00px;
+    top: 7.50px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled18fd588a {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 226.00px;
+    top: 92.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled18fd588a .elementsInputBoxBase8af63d9b {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled18fd588a .elementsInputBoxBase8af63d9b .textboxFrame5d7d47fd {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(0, 0, 0, 0.2);
+      stroke: rgba(0, 0, 0, 0);
+          stroke-width: 1.00px;
+          stroke-linecap: butt;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -1.00px;
+    top: -1.00px;
+    right: -1.00px;
+    bottom: -1.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabled18fd588a .hintTextc5ccb6fe {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      line-height: 17.00px;
+      letter-spacing: 0.00px;
+      color: rgba(0, 0, 0, 0.4);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 12.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 44.00px;
+    height: 16.00px;
+    left: 42.00px;
+    top: 7.50px;
+
+}
+
+.home .textTextBoxNoHeaderDisabledd44008b2 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 127.00px;
+    height: 32.00px;
+    left: 420.00px;
+    top: 92.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabledd44008b2 .elementsInputBoxBase2c965831 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: auto;
+    height: auto;
+    left: 0.00px;
+    top: 0.00px;
+    right: 0.00px;
+    bottom: 0.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabledd44008b2 .elementsInputBoxBase2c965831 .textboxFrame91e2df09 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(0, 0, 0, 0.2);
+      stroke: rgba(0, 0, 0, 0);
+          stroke-width: 1.00px;
+          stroke-linecap: butt;
+      box-shadow: none;
+      width: auto;
+    height: auto;
+    left: -1.00px;
+    top: -1.00px;
+    right: -1.00px;
+    bottom: -1.00px;
+
+}
+
+.home .textTextBoxNoHeaderDisabledd44008b2 .hintTextf1a759c4 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      line-height: 17.00px;
+      letter-spacing: 0.00px;
+      color: rgba(0, 0, 0, 0.4);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 12.00px;
+      font-weight: 400;
+    font-style: normal;
+      font-family: 'Segoe UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 21.00px;
+    height: 16.00px;
+    left: 50.00px;
+    top: 7.50px;
+
+}
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 380px;
+}
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+input {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background: #eee;
+}
+
+
+#btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+}
+
+#space {
+  width: 10px;
+}

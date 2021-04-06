@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<script src='../src/js/master.js'></script>
+
+<head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+        <div data-layer="a0de79de-967d-4069-9a06-a1898f3ea7b8" class="home">
+                <select id='province' data-layer="ba24943d-bfde-4f6f-9885-3db9b894b388"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected" onchange={provincia_choice()}>
+                </select>
+                <div data-layer="588f4f38-0f30-455e-beae-36078cf86fe0"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc">
+                        <div data-layer="100e0bdd-0619-4445-9268-f0679797f9aa"
+                                class="basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonRestb270587b"> <svg
+                                        data-layer="c4f41268-6252-4a74-adcb-9f931c714fe7" preserveAspectRatio="none"
+                                        viewBox="-0.75 31.25 144.5 1.5" class="baseFill815c9a3f">
+                                        <path d="M 143 32 L 0 32 L 143 32 Z" />
+                                </svg>
+                                <div data-layer="aeb4a87b-1a35-41d9-b372-ad0b07cc68c7" class="rettangolo1">
+                                        <div id="table-wrapper" class="tableFixHead">
+                                                <div id="table-scroll">
+                                                        <table>
+                                                                <thead>
+                                                                        <tr>
+                                                                                <th><span class="text">NOME</span></th>
+                                                                                <th><span class="text">NUMERO</span></th>
+                                                                                <th><span class="text">INFO</span></th>
+                                                                                <th><span class="text" id="span_edit">EDIT</span></th>
+                                                                        </tr>
+                                                                </thead>
+                                                                <tbody id="tab">
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <select data-layer="39bdcc76-cb18-47e8-8e19-2b4703f64d1a"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20" id='comune'
+                        onchange={comune_choice()}>
+                </select>
+                <select data-layer="20b744dd-9022-421f-8b3f-005152801635"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697" id='tipologia'
+                        onchange={tipologia_choice()}>
+                        <option value='ag'>Autorità Giudiziarie</option>
+                        <option value='fp'>Forze di Polizia</option>
+                        <option value='ip'>Istituti Penitenziari</option>
+                        <option value='co'>Comunità</option>
+
+                </select>
+                <button data-layer="55a8ef2b-ab24-45cc-90ae-094f8e2a991c"
+                        class="basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover" onclick={render()}>
+                        <div data-layer="28b241a4-9e3b-4f5a-bf4d-87e9732b8318" class="buttonBase"></div>
+                        <div data-layer="6771575b-bc64-45d6-b172-cead3318ad3c" class="hoverBorder"></div>
+                        <div data-layer="6ee808ba-5e04-432d-9a9d-a6ce4dd8ab05" class="cerca">
+                                Cerca
+                        </div>
+                </button>
+                <button data-layer="bbd97c67-a824-4072-a4f9-6e0980758810"
+                        class="basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover2951ad12"
+                        onclick={save()}>
+                        <div data-layer="f36d2a50-2fa8-4fd4-be26-f819d1f698ea" class="buttonBase5a7b58e6"></div>
+                        <div data-layer="fa656f99-f82c-4300-a3ff-1de4183b6706" class="hoverBorder37ffe4d1"></div>
+                        <div data-layer="10ac36a9-f972-4f6d-91cd-3c7c689d0f59" class="salva">Salva</div>
+                </button>
+                <form id='input_refresh'>
+                
+                        <input class="textTextBoxNoHeaderDisabled"         value='' id='nome'   placeholder='Nome'  ></input>
+                        <input class="textTextBoxNoHeaderDisabled18fd588a" value='' id='numero' placeholder='Numero'></input>
+                        <input class="textTextBoxNoHeaderDisabledd44008b2" value='' id='info'   placeholder='Info'  ></input>
+                
+                </form>
+        </div>
+
+
+
+</body>
+
+</html>

@@ -1,13 +1,13 @@
 const { ipcRenderer, contextBridge } = require('electron')
 const fs = require('fs');
-const path = require('path')
+//const path = require('path')
 
 const validChannels = ["toMain", "myRenderChannel"];
 
 let json_path = ''
 
 // Dev 1 == Activate
-let dev = 0
+let dev = 1
 if (dev == 0) {
   json_path = __dirname + '\\src\\json\\Province italiane.json'
 } else {
@@ -165,7 +165,7 @@ contextBridge.exposeInMainWorld(
     tabella()
     input_refresh()
   },
-  search_function: () => {
+  search: () => {
     let to_find_key = ['nome', 'numero', 'info']
     let to_find_value = []
 
@@ -180,42 +180,35 @@ contextBridge.exposeInMainWorld(
 
     let find = []
 
-    Object.values(file.data).map(
-      function (v, prov) {
-        Object.values(v).map(
-          function (v, com) {
-            Object.values(v).map(
-              function (v, tip) {
-                Object.values(v).map(
-                  function (v, index) {
-                    const check = Object.values(v).map((e) => e.toLowerCase())
-                    for (let i = 0; i < to_find_value.length; i++) {
+    Object.values(file.data).map((v, prov) => Object.values(v).map(
+      (v, com) => Object.values(v).map(
+        (v, tip) => Object.values(v).map(
+          function (v) {
+            const check = Object.values(v).map((e) => e.toLowerCase())
+            for (let i = 0; i < to_find_value.length; i++) {
 
-                      for (let ind = 0; ind < check.length; ind++) {
-                        if (check[ind].includes(to_find_value[i])) {
-                          {
-                            let push_data = {
-                              "provincia": Object.keys(file.data)[prov],
-                              "comune": Object.keys(Object.values(file.data)[prov])[com],
-                              "tipologia": Object.keys(Object.values(Object.values(file.data)[prov])[com])[tip],
-                              "data": v
-                            }
-                            if (find.includes(push_data)) {
+              for (let ind = 0; ind < check.length; ind++) {
+                if (check[ind].includes(to_find_value[i])) {
+                  {
+                    let push_data = {
+                      "provincia": Object.keys(file.data)[prov],
+                      "comune": Object.keys(Object.values(file.data)[prov])[com],
+                      "tipologia": Object.keys(Object.values(Object.values(file.data)[prov])[com])[tip],
+                      "data": v
+                    }
+                    if (find.includes(push_data)) {
 
-                            } else {
-                              find.push(push_data)
-                            }
-                          }
-                        }
-                      }
+                    } else {
+                      find.push(push_data)
                     }
                   }
-                )
+                }
               }
-            )
+            }
           }
         )
-      }
+      )
+    )
     )
 
     for (let index = 0; index < find.length; index++) {
@@ -231,10 +224,10 @@ contextBridge.exposeInMainWorld(
           element.comune == e.comune &
           element.tipologia == e.tipologia) {
           count += 1
-        }  
+        }
       }
       if (count > 1) {
-        find.splice(index,1)
+        find.splice(index, 1)
       }
     }
     input_refresh()
@@ -244,11 +237,7 @@ contextBridge.exposeInMainWorld(
         .replaceAll('{v}', find[index].comune + '---' + find[index].data.nome)
         .replaceAll('{numero}', find[index].data.numero)
         .replaceAll('{info}', find[index].data.info)
-        .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Modifica</button>' +
-        '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Elimina</button></div>')
-      .replaceAll('{dati}', find[index].provincia + '_?' + find[index].comune + '_?' + find[index].tipologia + '_?' + find[index].data['nome'] + '_?' +
-      find[index].data['numero'] + '_?' + find[index].data['info'])
-      .replaceAll('{index}', index)
+        .replaceAll('{edit}', 'Non modificabile durante la ricerca')
     ).join(' ')
   },
   save_choice: (type, choice) => {
@@ -266,7 +255,12 @@ contextBridge.exposeInMainWorld(
       ipcRenderer.send(channel, data);
     }
   },
-  /*
+}
+);
+
+
+
+/*
   on: (channel, callback) => {
     if (validChannels.includes(channel)) {
       // Filtering the event param from ipcRenderer
@@ -291,6 +285,3 @@ contextBridge.exposeInMainWorld(
     }
   },
   */
-}
-);
-

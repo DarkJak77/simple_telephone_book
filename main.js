@@ -10,15 +10,16 @@ ipcMain.on('toMain',  (event, ...args) => {
   };
 
   if (args[0] == 'no_data') {
-    options.message = 'Operazione non consentita.\nNessuno parametro inserito'
+    options.message = 'Operazione non consentita.'
     options.type = 'error'
   }
   dialog.showMessageBox(null, options)
 })
 
 function createWindow() {
-  
-  let dev = 0
+
+  // Dev 1 == Activate
+  let dev = 1
   let option = {
     title: 'Rubrica',
     width: 800,
@@ -32,7 +33,7 @@ function createWindow() {
     }
   }
 
-  // Dev 1 == Activate
+  
   if (dev == 1) {
     option.resizable = true
     option.fullscreenable = true

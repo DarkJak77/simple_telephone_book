@@ -1,8 +1,6 @@
-/*
-window.api.on('myRenderChannel', (event, ...args) => {
-    let rest = args[0]        
-})
-*/
+function stay_alive(){
+
+}
 
 function send(msg) {
     window.api.send('toMain', msg)
@@ -77,8 +75,26 @@ function tipologia_choice() {
 
 // Render
 function render() {
-    window.api.render_tabella()
+    let search = ['nome','numero','info']
+    
+    for (let index = 0; index < search.length; index++) {
+        if (document.getElementById(search[index]).value != ''){
+            window.api.search()
+            break
+        }
+        if ( index == 2) {
+          window.api.render_tabella()  
+        }
+    }
+
+    
 }
 
 auto_load()
 
+
+/*
+window.api.on('myRenderChannel', (event, ...args) => {
+    let rest = args[0]        
+})
+*/

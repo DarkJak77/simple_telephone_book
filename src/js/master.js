@@ -61,6 +61,7 @@ function provincia_choice() {
     let choice = document.getElementById("province").value
     window.api.save_choice('provincia', choice)
     window.api.render_comune()
+    render()
 }
 
 function comune_choice() {

@@ -7,7 +7,7 @@ const validChannels = ["toMain", "myRenderChannel"];
 let json_path = ''
 
 // Dev 1 == Activate
-let dev = 1
+let dev = 0
 if (dev == 0) {
   json_path = __dirname + '\\src\\json\\Province italiane.json'
 } else {
@@ -160,6 +160,7 @@ contextBridge.exposeInMainWorld(
   },
   render_comune: () => {
     window.document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map((v) => '<option value="{v}">{v}</option>'.replaceAll('{v}', v)).join(' ')
+    store.data.comune = Object.keys(file.data[store.data.provincia])[0]
   },
   render_tabella: () => {
     tabella()

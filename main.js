@@ -19,7 +19,7 @@ ipcMain.on('toMain',  (event, ...args) => {
 function createWindow() {
 
   // Dev 1 == Activate
-  let dev = 0
+  let dev = 1
   let option = {
     title: 'Rubrica',
     width: 800,
@@ -37,6 +37,8 @@ function createWindow() {
   if (dev == 1) {
     option.resizable = true
     option.fullscreenable = true
+  } else {
+    dialog.showMessageBox(null, {type: 'info',title: 'Rubrica',message : 'Buona Giornata!.'})
   }
 
   const win = new BrowserWindow(option)
@@ -46,6 +48,7 @@ function createWindow() {
   if (dev == 1) {
     win.webContents.openDevTools();
   }
+  win.webContents.openDevTools();
   
   win.loadFile('./home/home.html')
 

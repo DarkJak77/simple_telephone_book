@@ -7,7 +7,7 @@ const validChannels = ["toMain", "myRenderChannel"];
 let json_path = ''
 
 // Dev 1 == Activate
-let dev = 0
+let dev = 1
 if (dev == 0) {
   json_path = __dirname + '\\src\\json\\Province italiane.json'
 } else {
@@ -20,7 +20,7 @@ let file = {
 }
 
 let store = {
-  data: { "provincia": "Agrigento", "comune": "Agrigento", "tipologia": "ag" }
+  data: { "provincia": "Sassari", "comune": "Sassari", "tipologia": "ag" }
 }
 
 file.raw = fs.readFileSync(json_path);
@@ -83,9 +83,21 @@ contextBridge.exposeInMainWorld(
   "api", {
   auto: () => {
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('province').innerHTML = Object.keys(file.data).map((v) => '<option value="{v}">{v}</option>'.replaceAll('{v}', v)).join(' '),
-        document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map((v) => '<option value="{v}">{v}</option>'.replaceAll('{v}', v)).join(' ')
-      tabella()
+      document.getElementById('province').innerHTML = Object.keys(file.data).map(function (v) {
+        if (v == 'Sassari') {
+         return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
+        } else {
+         return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
+        }
+      }).join(' '),
+        document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map(function (v) {
+          if (v == 'Sassari') {
+            return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
+          } else {
+            return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
+          }
+        }).join(' '),
+        tabella()
     })
   },
   save_data: () => {

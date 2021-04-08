@@ -9,6 +9,7 @@ function send(msg) {
 
 function auto_load() {
     window.api.auto()
+    
 }
 
 function del(ind) {

@@ -1,15 +1,15 @@
 const { ipcRenderer, contextBridge } = require('electron')
 const fs = require('fs');
-//const path = require('path')
 
 const validChannels = ["toMain", "myRenderChannel"];
 
 let json_path = ''
 
 // Dev 1 == Activate
-let dev = 1
+let dev = 0
 if (dev == 0) {
-  json_path = __dirname + '\\src\\json\\Province italiane.json'
+  json_path = fs.readFileSync('./src/config/config.txt', {encoding:'utf8', flag:'r'}); // __dirname + '\\src\\json\\Province italiane.json'
+  console.log(json_path)
 } else {
   json_path = './src/json/Province italiane.json'
 }

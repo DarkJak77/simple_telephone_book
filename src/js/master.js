@@ -1,7 +1,3 @@
-function stay_alive(){
-
-}
-
 function send(msg) {
     window.api.send('toMain', msg)
 }

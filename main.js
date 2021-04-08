@@ -34,7 +34,7 @@ function createWindow() {
   }
 
   
-  if (dev == 0) {
+  if (dev == 1) {
     option.resizable = true
     option.fullscreenable = true
   } else {
@@ -45,7 +45,7 @@ function createWindow() {
   win.setMenu(null)
   dialog.showMessageBox(null, {type: 'info',title: 'Rubrica',message : 'Buona Giornata!.'})
 
-  if (dev == 0) {
+  if (dev == 1) {
     win.webContents.openDevTools();
   }
   

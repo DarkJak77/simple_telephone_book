@@ -8,8 +8,7 @@ let json_path = ''
 // Dev 1 == Activate
 let dev = 0
 if (dev == 0) {
-  json_path = fs.readFileSync('./src/config/config.txt', {encoding:'utf8', flag:'r'}); // __dirname + '\\src\\json\\Province italiane.json'
-  console.log(json_path)
+  json_path = fs.readFileSync( __dirname + '\\src\\config\\config.txt', {encoding:'utf8', flag:'r'}); // __dirname + '\\src\\json\\Province italiane.json'
 } else {
   json_path = './src/json/Province italiane.json'
 }
@@ -122,6 +121,7 @@ contextBridge.exposeInMainWorld(
     } else {
       return 'no_data'
     }
+    input_refresh()
 
   },
   save_file: () => {

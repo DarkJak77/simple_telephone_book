@@ -28,7 +28,9 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./src/ico/police.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",

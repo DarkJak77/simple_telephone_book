@@ -27,6 +27,7 @@ function createWindow() {
     center: true,
     resizable: false,
     fullscreenable: false,
+    icon: "./src/ico/police.ico",
 
     webPreferences: {
       preload: path.join(__dirname, "preload.js")

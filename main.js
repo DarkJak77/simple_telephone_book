@@ -43,7 +43,7 @@ function createWindow() {
   const win = new BrowserWindow(option)
 
   win.setMenu(null)
-  dialog.showMessageBox(null, {type: 'info',title: 'Rubrica',message : 'Buona Giornata!.'})
+  dialog.showMessageBox(null, {type: 'info',title: 'Rubrica',message : 'Buona Giornata!'})
 
   if (dev == 1) {
     win.webContents.openDevTools();

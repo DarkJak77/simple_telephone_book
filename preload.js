@@ -1,4 +1,4 @@
-const { ipcRenderer, contextBridge } = require('electron')
+﻿const { ipcRenderer, contextBridge } = require('electron')
 const fs = require('fs');
 
 const validChannels = ["toMain", "myRenderChannel"];
@@ -186,7 +186,7 @@ contextBridge.exposeInMainWorld(
       const element = window.document.getElementById(to_find_key[index]).value
       if (element != '') {
         if (!(to_find_value.includes(element))) {
-          to_find_value.push(element)
+          to_find_value.push(element.toLowerCase())
         }
       }
     }

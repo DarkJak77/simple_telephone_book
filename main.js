@@ -1,7 +1,8 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 
-
+// Is used to receive command from "master.js"
+// For now this function is used olny for make dialog
 ipcMain.on('toMain',  (event, ...args) => {
   let options = {
     type: 'info',
@@ -9,6 +10,7 @@ ipcMain.on('toMain',  (event, ...args) => {
     message: args[0],
   };
 
+  // When "master.js" send "no_data" text's, change type dialog to error
   if (args[0] == 'no_data') {
     options.message = 'Operazione non consentita.'
     options.type = 'error'
@@ -16,6 +18,7 @@ ipcMain.on('toMain',  (event, ...args) => {
   dialog.showMessageBox(null, options)
 })
 
+// This is a MAIN FUNCTION
 function createWindow() {
 
   // Dev 1 == Activate
@@ -34,7 +37,6 @@ function createWindow() {
     }
   }
 
-  
   if (dev == 1) {
     option.resizable = true
     option.fullscreenable = true
@@ -43,7 +45,10 @@ function createWindow() {
 
   const win = new BrowserWindow(option)
 
+  // Disable the Menu
   win.setMenu(null)
+
+  // This is good education or "Buona Educazione"
   dialog.showMessageBox(null, {type: 'info',title: 'Rubrica',message : 'Buona Giornata!'})
 
   if (dev == 1) {
@@ -51,8 +56,6 @@ function createWindow() {
   }
   
   win.loadFile('./home/home.html')
-
- 
 
 }
 

@@ -1,23 +1,30 @@
 ﻿const { ipcRenderer, contextBridge } = require('electron')
 const fs = require('fs');
 
+// This is channel to send message from "main.js" to "master.js" and viceversa 
 const validChannels = ["toMain", "myRenderChannel"];
 
+// this string contains the path of json whit the contacts
 let json_path = ''
 
 // Dev 1 == Activate
 let dev = 0
 if (dev == 0) {
-  json_path = fs.readFileSync( __dirname + '\\src\\config\\config.txt', {encoding:'utf8', flag:'r'}); // __dirname + '\\src\\json\\Province italiane.json'
+
+  // The path of json with contacts is in the "config.txt"
+  json_path = fs.readFileSync( __dirname + '\\src\\config\\config.txt', {encoding:'utf8', flag:'r'});
 } else {
-  json_path = './src/json/Province italiane.json'
+  json_path =  __dirname +  '\src\json\Province italiane.json'
 }
 
 let file = {
+  // this contain the raw json
   raw: '',
+  // this contain the parsed json
   data: '',
 }
 
+// store contain the "choice"
 let store = {
   data: { "provincia": "Sassari", "comune": "Sassari", "tipologia": "ag" }
 }
@@ -25,6 +32,7 @@ let store = {
 file.raw = fs.readFileSync(json_path);
 file.data = JSON.parse(file.raw)
 
+// this function make a table that contain a contact
 function tabella() {
   document.getElementById('tab').innerHTML = file.data[store.data.provincia][store.data.comune][store.data.tipologia].map((v, index) =>
 
@@ -41,11 +49,17 @@ function tabella() {
   ).join(' ')
 }
 
+// Initializa <input> in the html
 function input_refresh() {
   document.getElementById('input_refresh').innerHTML =
     '<input class="textTextBoxNoHeaderDisabled" value="" id="nome" placeholder="Nome"></input><input class="textTextBoxNoHeaderDisabled18fd588a" value="" id="numero" placeholder="Numero"></input><input class="textTextBoxNoHeaderDisabledd44008b2" value="" id="info" placeholder="Info"></input>'
 }
 
+/* 
+This function is used to sorte element in object
+If type == 1 the element move to the "bottom"
+If type == 0 the element move to the "top"
+*/
 function move_array(index, type, value) {
   let new_array = []
 
@@ -78,8 +92,13 @@ function move_array(index, type, value) {
   file.data[value[0]][value[1]][value[2]] = new_array
 }
 
+/*
+THIS IS THE MUST HAVE
+ALL window.api.ETC in "master.js" work thanks contextBridge.exposeInMainWorld 
+*/
 contextBridge.exposeInMainWorld(
   "api", {
+    // when the app is started, "provincia" and "comune" <select> is make
   auto: () => {
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('province').innerHTML = Object.keys(file.data).map(function (v) {
@@ -89,16 +108,17 @@ contextBridge.exposeInMainWorld(
          return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
         }
       }).join(' '),
-        document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map(function (v) {
-          if (v == 'Sassari') {
-            return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
-          } else {
-            return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
-          }
-        }).join(' '),
-        tabella()
+      document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map(function (v) {
+        if (v == 'Sassari') {
+          return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
+        } else {
+          return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
+        }
+     }).join(' '),
+      tabella()
     })
   },
+  // used to add element to telephone book
   save_data: () => {
     let to_push = {
       "nome": document.getElementById('nome').value,
@@ -124,14 +144,17 @@ contextBridge.exposeInMainWorld(
     input_refresh()
 
   },
+  // save json with new element
   save_file: () => {
     let to_save_1 = JSON.stringify(file.data)
     fs.writeFileSync(json_path, to_save_1);
   },
+  // delete a element
   del: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
     file.data[value[0]][value[1]][value[2]].splice(ind, 1)
   },
+  // edit a element
   edit: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
     let count = 0
@@ -154,6 +177,7 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+  // move to top an element
   up: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?');
     if (ind != 0) {
@@ -162,6 +186,7 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+  // move to bottom an element
   down: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?');
     if (ind != (file.data[value[0]][value[1]][value[2]].length - 1)) {
@@ -170,14 +195,21 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+  // when "provincia" is choice, option of the "comune" select is make
   render_comune: () => {
     window.document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map((v) => '<option value="{v}">{v}</option>'.replaceAll('{v}', v)).join(' ')
     store.data.comune = Object.keys(file.data[store.data.provincia])[0]
   },
+  // make tabella with element
   render_tabella: () => {
     tabella()
     input_refresh()
   },
+  /*
+  when the input they are not empty, this function search in ALL "provincia" and "comune"
+  these words. 
+  In this mode, the element is not editable
+   */
   search: () => {
     let to_find_key = ['nome', 'numero', 'info']
     let to_find_value = []
@@ -253,6 +285,7 @@ contextBridge.exposeInMainWorld(
         .replaceAll('{edit}', 'Non modificabile durante la ricerca')
     ).join(' ')
   },
+  // When any <select> change, this function save the choice
   save_choice: (type, choice) => {
     if (type == 'provincia') {
       store.data.provincia = choice
@@ -263,6 +296,7 @@ contextBridge.exposeInMainWorld(
       store.data.tipologia = choice
     }
   },
+  // used to send message from "master.js" to "main.js"
   send: (channel, data) => {
     if (validChannels.includes(channel)) {
       ipcRenderer.send(channel, data);
@@ -271,8 +305,7 @@ contextBridge.exposeInMainWorld(
 }
 );
 
-
-
+// This is a Deat code......
 /*
   on: (channel, callback) => {
     if (validChannels.includes(channel)) {

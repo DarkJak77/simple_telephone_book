@@ -1,19 +1,22 @@
+// This funciton is used to send message to "main.js"
 function send(msg) {
     window.api.send('toMain', msg)
 }
 
-
+// Render when app is started
 function auto_load() {
     window.api.auto()
     
 }
 
+// Used to delete value of telephone book
 function del(ind) {
     window.api.del(ind)
     send('Numero Rimosso con successo!')
     render()
 }
 
+// Used to edit value of telephone book
 function edit(ind) {
     let ret = window.api.edit(ind)
     if (ret == 'no_data') {
@@ -24,6 +27,7 @@ function edit(ind) {
     }
 }
 
+// This function is used to sort manually the contacts when are render
 function up(ind) {
     let ret = window.api.up(ind)
     if (ret == 'no_data') {
@@ -33,6 +37,7 @@ function up(ind) {
     }
 }
 
+// This function is used to sort manually the contacts when are render
 function down(ind) {
     let ret = window.api.down(ind)
     if (ret == 'no_data') {
@@ -44,6 +49,8 @@ function down(ind) {
 
 function save() {
     let ret = window.api.save_data()
+    // if there are no contacts to save, the json file update.
+    // this is to prevent too many bailouts 
     if (ret == 'no_data') {
         window.api.save_file()
         send('Rubrica Aggiornata con successo!')
@@ -53,7 +60,7 @@ function save() {
     }
 }
 
-// Choice 
+// This function is tied at "onchange" of html
 function provincia_choice() {
     let choice = document.getElementById("province").value
     window.api.save_choice('provincia', choice)
@@ -61,21 +68,24 @@ function provincia_choice() {
     render()
 }
 
+// This function is tied at "onchange" of html
 function comune_choice() {
     let choice = document.getElementById("comune").value
     window.api.save_choice('comune', choice)
 }
 
+// This function is tied at "onchange" of html
 function tipologia_choice() {
     let choice = document.getElementById("tipologia").value
     window.api.save_choice('tipologia', choice)
 }
 
-// Render
 function render() {
     let search = ['nome','numero','info']
     
     for (let index = 0; index < search.length; index++) {
+
+        // This Exception is used to "seach"
         if (document.getElementById(search[index]).value != ''){
             window.api.search()
             break
@@ -84,13 +94,11 @@ function render() {
           window.api.render_tabella()  
         }
     }
-
-    
 }
 
 auto_load()
 
-
+// This is a Deat code......
 /*
 window.api.on('myRenderChannel', (event, ...args) => {
     let rest = args[0]        

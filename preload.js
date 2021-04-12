@@ -230,9 +230,10 @@ contextBridge.exposeInMainWorld(
                   {
                     let push_data = {
                       "comune": Object.keys(file.data)[com],
-                      "tipologia": Object.values(Object.keys(file.data)[com][tip]),
+                      "tipologia": Object.keys(Object.values(file.data)[com])[tip],
                       "data": v
                     }
+                    console.log(push_data)
                     if (find.includes(push_data)) {
 
                     } else {

@@ -26,7 +26,7 @@ let file = {
 
 // store contain the "choice"
 let store = {
-  data: { "provincia": "Sassari", "comune": "Sassari", "tipologia": "ag" }
+  data: { "comune": "Sassari", "tipologia": "ag" }
 }
 
 file.raw = fs.readFileSync(json_path);
@@ -34,7 +34,7 @@ file.data = JSON.parse(file.raw)
 
 // this function make a table that contain a contact
 function tabella() {
-  document.getElementById('tab').innerHTML = file.data[store.data.provincia][store.data.comune][store.data.tipologia].map((v, index) =>
+  document.getElementById('tab').innerHTML = file.data[store.data.comune][store.data.tipologia].map((v, index) =>
 
     "<tr><td>{v}</td><td>{numero}</td><td>{info}</td><td>{edit}</td></tr>"
       .replaceAll('{v}', v['nome'])
@@ -43,7 +43,7 @@ function tabella() {
       .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Modifica</button>' +
         '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Elimina</button><div id="space"></div><button onclick={down({index})}>▼</button>' +
         '<div id="space"></div><button onclick={up({index})}>▲</button></div>')
-      .replaceAll('{dati}', store.data.provincia + '_?' + store.data.comune + '_?' + store.data.tipologia + '_?' + v['nome'] + '_?' +
+      .replaceAll('{dati}',  store.data.comune + '_?' + store.data.tipologia + '_?' + v['nome'] + '_?' +
         v['numero'] + '_?' + v['info'])
       .replaceAll('{index}', index)
   ).join(' ')
@@ -55,6 +55,19 @@ function input_refresh() {
     '<input class="textTextBoxNoHeaderDisabled" value="" id="nome" placeholder="Nome"></input><input class="textTextBoxNoHeaderDisabled18fd588a" value="" id="numero" placeholder="Numero"></input><input class="textTextBoxNoHeaderDisabledd44008b2" value="" id="info" placeholder="Info"></input>'
 }
 
+function restore() {
+  store.data = { "comune": "Sassari", "tipologia": "ag" }
+  document.getElementById('comune').innerHTML = ''
+  document.getElementById('comune').innerHTML = Object.keys(file.data).map(function (v) {
+    if (v == 'Sassari') {
+      return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
+    } else {
+      return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
+    }
+ }).join(' '),
+  tabella()
+}
+
 /* 
 This function is used to sorte element in object
 If type == 1 the element move to the "bottom"
@@ -63,10 +76,10 @@ If type == 0 the element move to the "top"
 function move_array(index, type, value) {
   let new_array = []
 
-  const element = file.data[value[0]][value[1]][value[2]]
+  const element = file.data[value[0]][value[1]]
 
   if (type == 1) {
-    for (let ind = 0; ind < file.data[value[0]][value[1]][value[2]].length; ind++) {
+    for (let ind = 0; ind < file.data[value[0]][value[1]].length; ind++) {
       if (ind == index) {
         new_array.push(element[ind + 1])
         new_array.push(element[ind])
@@ -78,7 +91,7 @@ function move_array(index, type, value) {
   }
 
   if (type == 0) {
-    for (let inde = 0; inde < file.data[value[0]][value[1]][value[2]].length; inde++) {
+    for (let inde = 0; inde < file.data[value[0]][value[1]].length; inde++) {
       if (inde == index - 1) {
         new_array.push(element[inde + 1])
         new_array.push(element[inde])
@@ -89,7 +102,7 @@ function move_array(index, type, value) {
     }
   }
 
-  file.data[value[0]][value[1]][value[2]] = new_array
+  file.data[value[0]][value[1]] = new_array
 }
 
 /*
@@ -101,21 +114,7 @@ contextBridge.exposeInMainWorld(
     // when the app is started, "provincia" and "comune" <select> is make
   auto: () => {
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('province').innerHTML = Object.keys(file.data).map(function (v) {
-        if (v == 'Sassari') {
-         return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
-        } else {
-         return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
-        }
-      }).join(' '),
-      document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map(function (v) {
-        if (v == 'Sassari') {
-          return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
-        } else {
-          return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
-        }
-     }).join(' '),
-      tabella()
+      restore()
     })
   },
   // used to add element to telephone book
@@ -123,7 +122,7 @@ contextBridge.exposeInMainWorld(
     let to_push = {
       "nome": document.getElementById('nome').value,
       "numero": document.getElementById('numero').value,
-      "info": info = document.getElementById('info').value
+      "info": document.getElementById('info').value
     }
     let count = 0
 
@@ -137,12 +136,11 @@ contextBridge.exposeInMainWorld(
       count += 1
     }
     if (count != 3) {
-      file.data[store.data.provincia][store.data.comune][store.data.tipologia].push(to_push)
+      file.data[store.data.comune][store.data.tipologia].push(to_push)
+      input_refresh()
     } else {
       return 'no_data'
     }
-    input_refresh()
-
   },
   // save json with new element
   save_file: () => {
@@ -152,27 +150,28 @@ contextBridge.exposeInMainWorld(
   // delete a element
   del: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
-    file.data[value[0]][value[1]][value[2]].splice(ind, 1)
+    file.data[value[0]][value[1]].splice(ind, 1)
   },
   // edit a element
   edit: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
     let count = 0
     if (document.getElementById('nome').value != '') {
-      file.data[value[0]][value[1]][value[2]][ind]['nome'] = document.getElementById('nome').value
+      file.data[value[0]][value[1]][ind]['nome'] = document.getElementById('nome').value
     } else {
       count += 1
     }
     if (document.getElementById('numero').value != '') {
-      file.data[value[0]][value[1]][value[2]][ind]['numero'] = document.getElementById('numero').value
+      file.data[value[0]][value[1]][ind]['numero'] = document.getElementById('numero').value
     } else {
       count += 1
     }
     if (document.getElementById('info').value != '') {
-      file.data[value[0]][value[1]][value[2]][ind]['info'] = document.getElementById('info').value
+      file.data[value[0]][value[1]][ind]['info'] = document.getElementById('info').value
     } else {
       count += 1
     }
+    input_refresh()
     if (count == 3) {
       return 'no_data'
     }
@@ -189,16 +188,11 @@ contextBridge.exposeInMainWorld(
   // move to bottom an element
   down: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?');
-    if (ind != (file.data[value[0]][value[1]][value[2]].length - 1)) {
+    if (ind != (file.data[value[0]][value[1]].length - 1)) {
       move_array(ind, 1, value)
     } else {
       return 'no_data'
     }
-  },
-  // when "provincia" is choice, option of the "comune" select is make
-  render_comune: () => {
-    window.document.getElementById('comune').innerHTML = Object.keys(file.data[store.data.provincia]).map((v) => '<option value="{v}">{v}</option>'.replaceAll('{v}', v)).join(' ')
-    store.data.comune = Object.keys(file.data[store.data.provincia])[0]
   },
   // make tabella with element
   render_tabella: () => {
@@ -225,9 +219,8 @@ contextBridge.exposeInMainWorld(
 
     let find = []
 
-    Object.values(file.data).map((v, prov) => Object.values(v).map(
-      (v, com) => Object.values(v).map(
-        (v, tip) => Object.values(v).map(
+    Object.values(file.data).map((v, com) => Object.values(v).map(
+      (v, tip) => Object.values(v).map(
           function (v) {
             const check = Object.values(v).map((e) => e.toLowerCase())
             for (let i = 0; i < to_find_value.length; i++) {
@@ -236,9 +229,8 @@ contextBridge.exposeInMainWorld(
                 if (check[ind].includes(to_find_value[i])) {
                   {
                     let push_data = {
-                      "provincia": Object.keys(file.data)[prov],
-                      "comune": Object.keys(Object.values(file.data)[prov])[com],
-                      "tipologia": Object.keys(Object.values(Object.values(file.data)[prov])[com])[tip],
+                      "comune": Object.keys(file.data)[com],
+                      "tipologia": Object.values(Object.keys(file.data)[com][tip]),
                       "data": v
                     }
                     if (find.includes(push_data)) {
@@ -251,7 +243,6 @@ contextBridge.exposeInMainWorld(
               }
             }
           }
-        )
       )
     )
     )
@@ -265,7 +256,6 @@ contextBridge.exposeInMainWorld(
         if (element.data.nome == e.data.nome &
           element.data.numero == e.data.numero &
           element.data.info == e.data.info &
-          element.provincia == e.provincia &
           element.comune == e.comune &
           element.tipologia == e.tipologia) {
           count += 1
@@ -287,14 +277,14 @@ contextBridge.exposeInMainWorld(
   },
   // When any <select> change, this function save the choice
   save_choice: (type, choice) => {
-    if (type == 'provincia') {
-      store.data.provincia = choice
-      store.data.comune = Object.keys(file.data[store.data.provincia])[0]
-    } else if (type == 'comune') {
+    if (type == 'comune') {
       store.data.comune = choice
     } else if (type == 'tipologia') {
       store.data.tipologia = choice
     }
+  },
+  restore: () => {
+    restore()
   },
   // used to send message from "master.js" to "main.js"
   send: (channel, data) => {

@@ -9,9 +9,13 @@
 
 <body>
         <div data-layer="a0de79de-967d-4069-9a06-a1898f3ea7b8" class="home">
-                <select id='province' data-layer="ba24943d-bfde-4f6f-9885-3db9b894b388" title="Provincia"
-                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected" onchange={provincia_choice()}>
+                <select id='comune' data-layer="ba24943d-bfde-4f6f-9885-3db9b894b388"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected"  
+                        onchange={comune_choice()}>
                 </select>
+                <button class="basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697"
+                        onclick={restore()}>PREDEFINITO
+                </button>
                 <div data-layer="588f4f38-0f30-455e-beae-36078cf86fe0"
                         class="basicInputButtonsHyperlinksSplitButtonStatesSelected73b08afc">
                         <div data-layer="100e0bdd-0619-4445-9268-f0679797f9aa"
@@ -41,17 +45,12 @@
                         </div>
                 </div>
                 <select data-layer="39bdcc76-cb18-47e8-8e19-2b4703f64d1a"
-                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20" id='comune' title="Comune"
-                        onchange={comune_choice()}>
-                </select>
-                <select data-layer="20b744dd-9022-421f-8b3f-005152801635"
-                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697" id='tipologia' title="Tipologia"
+                        class="basicInputButtonsHyperlinksSplitButtonStatesSelected4c5b7e20" id='tipologia' title="Tipologia"
                         onchange={tipologia_choice()}>
                         <option value='ag'>Autorità Giudiziarie</option>
                         <option value='fp'>Forze di Polizia</option>
                         <option value='ip'>Istituti Penitenziari</option>
                         <option value='co'>Comunità</option>
-
                 </select>
                 <button data-layer="55a8ef2b-ab24-45cc-90ae-094f8e2a991c"
                         class="basicInputButtonsHyperlinksSplitButtonElementsPrimaryButtonHover" onclick={render()}>

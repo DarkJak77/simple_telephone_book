@@ -8,7 +8,10 @@ function auto_load() {
     window.api.auto()
     
 }
-
+// Fast Sassari Choice
+function restore(){
+    window.api.restore()
+}
 // Used to delete value of telephone book
 function del(ind) {
     window.api.del(ind)
@@ -58,14 +61,6 @@ function save() {
         send('Numero Aggiunto con successo!')
         render()
     }
-}
-
-// This function is tied at "onchange" of html
-function provincia_choice() {
-    let choice = document.getElementById("province").value
-    window.api.save_choice('provincia', choice)
-    window.api.render_comune()
-    render()
 }
 
 // This function is tied at "onchange" of html

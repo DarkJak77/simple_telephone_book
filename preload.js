@@ -12,9 +12,9 @@ let dev = 0
 if (dev == 0) {
 
   // The path of json with contacts is in the "config.txt"
-  json_path = fs.readFileSync( __dirname + '\\src\\config\\config.txt', {encoding:'utf8', flag:'r'});
+  json_path = fs.readFileSync(__dirname + '\\src\\config\\config.txt', { encoding: 'utf8', flag: 'r' });
 } else {
-  json_path =  __dirname +  '\src\json\Province italiane.json'
+  json_path = __dirname + '\src\json\Province italiane.json'
 }
 
 let file = {
@@ -43,7 +43,7 @@ function tabella() {
       .replaceAll('{edit}', '<div id="btn"><button type="button" id="edit_{index}" value="{dati}" onclick={edit({index})}>Modifica</button>' +
         '<div id="space"></div>' + '<button type="button" onclick={del({index})}>Elimina</button><div id="space"></div><button onclick={down({index})}>▼</button>' +
         '<div id="space"></div><button onclick={up({index})}>▲</button></div>')
-      .replaceAll('{dati}',  store.data.comune + '_?' + store.data.tipologia + '_?' + v['nome'] + '_?' +
+      .replaceAll('{dati}', store.data.comune + '_?' + store.data.tipologia + '_?' + v['nome'] + '_?' +
         v['numero'] + '_?' + v['info'])
       .replaceAll('{index}', index)
   ).join(' ')
@@ -64,7 +64,13 @@ function restore() {
     } else {
       return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
     }
- }).join(' '),
+  }).join(' '),
+    document.getElementById('tipologia').innerHTML =
+    "<option value='ag'>Autorità Giudiziarie</option>" +
+    "<option value='fp'>Forze di Polizia</option>" +
+    "<option value='ip'>Istituti Penitenziari</option>" +
+    "<option value='co'>Comunità</option>" +
+    "<option value='ot'>Altro</option>"
   tabella()
 }
 
@@ -111,7 +117,7 @@ ALL window.api.ETC in "master.js" work thanks contextBridge.exposeInMainWorld
 */
 contextBridge.exposeInMainWorld(
   "api", {
-    // when the app is started, "provincia" and "comune" <select> is make
+  // when the app is started, "provincia" and "comune" <select> is make
   auto: () => {
     window.addEventListener('DOMContentLoaded', () => {
       restore()
@@ -221,29 +227,29 @@ contextBridge.exposeInMainWorld(
 
     Object.values(file.data).map((v, com) => Object.values(v).map(
       (v, tip) => Object.values(v).map(
-          function (v) {
-            const check = Object.values(v).map((e) => e.toLowerCase())
-            for (let i = 0; i < to_find_value.length; i++) {
+        function (v) {
+          const check = Object.values(v).map((e) => e.toLowerCase())
+          for (let i = 0; i < to_find_value.length; i++) {
 
-              for (let ind = 0; ind < check.length; ind++) {
-                if (check[ind].includes(to_find_value[i])) {
-                  {
-                    let push_data = {
-                      "comune": Object.keys(file.data)[com],
-                      "tipologia": Object.keys(Object.values(file.data)[com])[tip],
-                      "data": v
-                    }
-                    console.log(push_data)
-                    if (find.includes(push_data)) {
+            for (let ind = 0; ind < check.length; ind++) {
+              if (check[ind].includes(to_find_value[i])) {
+                {
+                  let push_data = {
+                    "comune": Object.keys(file.data)[com],
+                    "tipologia": Object.keys(Object.values(file.data)[com])[tip],
+                    "data": v
+                  }
+                  console.log(push_data)
+                  if (find.includes(push_data)) {
 
-                    } else {
-                      find.push(push_data)
-                    }
+                  } else {
+                    find.push(push_data)
                   }
                 }
               }
             }
           }
+        }
       )
     )
     )

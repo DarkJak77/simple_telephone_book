@@ -26,33 +26,5 @@
     "electron-osx-prompt": "^1.4.1",
     "electron-squirrel-startup": "^1.0.0"
   },
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "./src/ico/police.ico"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "simple_telephone_book"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
-  }
+  "config": {}
 }

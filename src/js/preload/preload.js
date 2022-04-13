@@ -1,21 +1,12 @@
 ﻿const { ipcRenderer, contextBridge } = require('electron')
 const fs = require('fs');
+const path = require('path')
 
 // This is channel to send message from "main.js" to "master.js" and viceversa 
 const validChannels = ["toMain", "myRenderChannel"];
 
 // this string contains the path of json whit the contacts
 let json_path = ''
-
-// Dev 1 == Activate
-let dev = 0
-if (dev == 0) {
-
-  // The path of json with contacts is in the "config.txt"
-  json_path = fs.readFileSync(__dirname + '\\src\\config\\config.txt', { encoding: 'utf8', flag: 'r' });
-} else {
-  json_path = __dirname + '\src\json\Province italiane.json'
-}
 
 let file = {
   // this contain the raw json
@@ -29,8 +20,39 @@ let store = {
   data: { "comune": "Sassari", "tipologia": "ag" }
 }
 
-file.raw = fs.readFileSync(json_path);
-file.data = JSON.parse(file.raw)
+// Questo serve a ritardare il caricamento del json
+window.addEventListener('DOMContentLoaded', () => {
+  
+  tryload()
+
+})
+
+// nel caso in cui ci fossero dei problemi il master chiede di riprovare
+ipcRenderer.on("myRenderChannel", (event, ...args) => {
+  if (args[0] == 'load') {
+    
+    tryload()
+    
+  } 
+})
+
+// la funzione che carica il json
+function tryload() {
+
+  try {
+    // The path of json with contacts is in the "config.txt"
+    json_path =  fs.readFileSync(path.join(__dirname , '..\\..\\..' , '\\src\\config\\config.txt'), { encoding: 'utf8', flag: 'r' });
+    file.raw = fs.readFileSync(json_path);
+    file.data = JSON.parse(file.raw)
+
+    restore()
+
+  } catch (error) {
+    ipcRenderer.send('toMain', 'noload');
+    
+  }
+
+}
 
 // this function make a table that contain a contact
 function tabella() {
@@ -55,22 +77,25 @@ function input_refresh() {
     '<input class="textTextBoxNoHeaderDisabled" value="" id="nome" placeholder="Nome"></input><input class="textTextBoxNoHeaderDisabled18fd588a" value="" id="numero" placeholder="Numero"></input><input class="textTextBoxNoHeaderDisabledd44008b2" value="" id="info" placeholder="Info"></input>'
 }
 
+
 function restore() {
   store.data = { "comune": "Sassari", "tipologia": "ag" }
-  document.getElementById('comune').innerHTML = ''
-  document.getElementById('comune').innerHTML = Object.keys(file.data).map(function (v) {
-    if (v == 'Sassari') {
-      return '<option value="{v}" selected>{v}</option>'.replaceAll('{v}', v)
-    } else {
-      return '<option value="{v}">{v}</option>'.replaceAll('{v}', v)
-    }
+  document.getElementsByTagName('datalist')[0].innerHTML =
+  document.getElementsByTagName('datalist')[0].innerHTML = Object.keys(file.data).map(function (v) {
+
+    return '<option value="{v}">'.replaceAll('{v}', v)
+
   }).join(' '),
+
     document.getElementById('tipologia').innerHTML =
     "<option value='ag'>Autorità Giudiziarie</option>" +
     "<option value='fp'>Forze di Polizia</option>" +
     "<option value='ip'>Istituti Penitenziari</option>" +
     "<option value='co'>Comunità</option>" +
     "<option value='ot'>Altro</option>"
+
+  document.getElementById('comune').value = 'Sassari'
+
   tabella()
 }
 
@@ -117,12 +142,7 @@ ALL window.api.ETC in "master.js" work thanks contextBridge.exposeInMainWorld
 */
 contextBridge.exposeInMainWorld(
   "api", {
-  // when the app is started, "provincia" and "comune" <select> is make
-  auto: () => {
-    window.addEventListener('DOMContentLoaded', () => {
-      restore()
-    })
-  },
+
   // used to add element to telephone book
   save_data: () => {
     let to_push = {
@@ -148,16 +168,19 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+  
   // save json with new element
   save_file: () => {
     let to_save_1 = JSON.stringify(file.data)
     fs.writeFileSync(json_path, to_save_1);
   },
+
   // delete a element
   del: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
     file.data[value[0]][value[1]].splice(ind, 1)
   },
+
   // edit a element
   edit: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?')
@@ -182,6 +205,7 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+
   // move to top an element
   up: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?');
@@ -191,6 +215,7 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+
   // move to bottom an element
   down: (ind) => {
     let value = window.document.getElementById('edit_' + ind).value.split('_?');
@@ -200,11 +225,13 @@ contextBridge.exposeInMainWorld(
       return 'no_data'
     }
   },
+
   // make tabella with element
   render_tabella: () => {
     tabella()
     input_refresh()
   },
+
   /*
   when the input they are not empty, this function search in ALL "provincia" and "comune"
   these words. 
@@ -282,6 +309,7 @@ contextBridge.exposeInMainWorld(
         .replaceAll('{edit}', 'Non modificabile durante la ricerca')
     ).join(' ')
   },
+
   // When any <select> change, this function save the choice
   save_choice: (type, choice) => {
     if (type == 'comune') {
@@ -290,9 +318,11 @@ contextBridge.exposeInMainWorld(
       store.data.tipologia = choice
     }
   },
+
   restore: () => {
     restore()
   },
+  
   // used to send message from "master.js" to "main.js"
   send: (channel, data) => {
     if (validChannels.includes(channel)) {
@@ -302,29 +332,7 @@ contextBridge.exposeInMainWorld(
 }
 );
 
-// This is a Deat code......
-/*
-  on: (channel, callback) => {
-    if (validChannels.includes(channel)) {
-      // Filtering the event param from ipcRenderer
-      const newCallback = (_, data) => callback(data);
-      ipcRenderer.on(channel, newCallback);
-    }
-  },
-  once: (channel, callback) => {
-    if (validChannels.includes(channel)) {
-      const newCallback = (_, data) => callback(data);
-      ipcRenderer.once(channel, newCallback);
-    }
-  },
-  removeListener: (channel, callback) => {
-    if (validChannels.includes(channel)) {
-      ipcRenderer.removeListener(channel, callback);
-    }
-  },
-  removeAllListeners: (channel) => {
-    if (validChannels.includes(channel)) {
-      ipcRenderer.removeAllListeners(channel)
-    }
-  },
-  */
+
+
+
+

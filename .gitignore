@@ -2,4 +2,8 @@ node_modules
 
 out/
 
-Province italiane.json
+rubrica.json
+
+.vscode/
+
+app.js

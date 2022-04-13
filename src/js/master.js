@@ -3,11 +3,6 @@ function send(msg) {
     window.api.send('toMain', msg)
 }
 
-// Render when app is started
-function auto_load() {
-    window.api.auto()
-    
-}
 // Fast Sassari Choice
 function restore(){
     window.api.restore()
@@ -60,6 +55,7 @@ function save() {
     } else {
         send('Numero Aggiunto con successo!')
         render()
+        window.api.save_file()
     }
 }
 
@@ -91,11 +87,4 @@ function render() {
     }
 }
 
-auto_load()
 
-// This is a Deat code......
-/*
-window.api.on('myRenderChannel', (event, ...args) => {
-    let rest = args[0]        
-})
-*/

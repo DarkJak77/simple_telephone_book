@@ -9,10 +9,14 @@
 
 <body>
         <div data-layer="a0de79de-967d-4069-9a06-a1898f3ea7b8" class="home">
-                <select id='comune' data-layer="ba24943d-bfde-4f6f-9885-3db9b894b388"
+                <input id='comune' data-layer="ba24943d-bfde-4f6f-9885-3db9b894b388"
                         class="basicInputButtonsHyperlinksSplitButtonStatesSelected"  
-                        onchange={comune_choice()}>
-                </select>
+                        onchange={comune_choice()} list="brow" placeholder='Comune..'>
+                        <datalist id="brow">
+
+                        </datalist> 
+                </input>
+
                 <button class="basicInputButtonsHyperlinksSplitButtonStatesSelected3bc3e697"
                         onclick={restore()}>PREDEFINITO
                 </button>

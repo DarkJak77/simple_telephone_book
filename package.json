@@ -1,6 +1,6 @@
 {
   "name": "simple_telephone_book",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "author": "DarkJak77",
   "description": "A simple telephone book",
   "main": "main.js",

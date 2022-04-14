@@ -3,6 +3,7 @@
 * Risolta schermata bianca all'avvio che impediva di usare l'app ( Davvero questa volta )
 * Rimosso richiesta conferma chiusura app
 * Snellito il codice
+* Aggiunto README
 
 ### 0.1.2 13/04/2022
 

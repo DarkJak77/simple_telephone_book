@@ -48,7 +48,6 @@ function tryload() {
     restore()
 
   } catch (error) {
-    ipcRenderer.send('toMain', 'noload');
     
   }
 

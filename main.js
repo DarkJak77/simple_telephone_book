@@ -20,12 +20,7 @@ ipcMain.on('toMain', (event, ...args) => {
 
     dialog.showMessageBox(null, options)
 
-  } else if (args[0] == 'noload') {
-    setTimeout(() => {
-      main_page.send('myRenderChannel', 'load')
-    }, 1000);
-
-  } else {
+  } else  {
     dialog.showMessageBox(null, options)
 
   }
@@ -89,11 +84,14 @@ class createWindow {
 
     }
 
+    /*
     this.win.on('close', (event) => {
 
       this.confirmAndQuit(event)
 
     })
+    */
+    
 
   }
 
@@ -131,6 +129,11 @@ class createWindow {
           }
         })
     }
+
+  }
+
+  destroy() {
+    this.win.destroy();
 
   }
 

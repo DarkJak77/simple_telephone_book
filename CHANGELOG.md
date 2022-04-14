@@ -1,3 +1,9 @@
+### 0.1.3 14/04/2022
+
+* Risolta schermata bianca all'avvio che impediva di usare l'app ( Davvero questa volta )
+* Rimosso richiesta conferma chiusura app
+* Snellito il codice
+
 ### 0.1.2 13/04/2022
 
 * Risolta schermata bianca all'avvio che impediva di usare l'app ( Forse )

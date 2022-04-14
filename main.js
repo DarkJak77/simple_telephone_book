@@ -132,11 +132,6 @@ class createWindow {
 
   }
 
-  destroy() {
-    this.win.destroy();
-
-  }
-
   // serve per mandare messaggi dalla finestra principale alle secondarie
   send(msg) {
     this.win.webContents.send('myRenderChannel', msg)

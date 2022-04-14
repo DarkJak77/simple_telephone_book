@@ -1,9 +1,6 @@
 node_modules
-
 out/
-
-rubrica.json
-
 .vscode/
-
+rubrica.json
 app.js
+config.txt

@@ -4,7 +4,8 @@
 1. [General Info](#general-info)
 2. [Attention](#attention)
 3. [Usage](#usage)
-4. [License](#license)
+4. [Request](#request)
+5. [License](#license)
 
 ## GENERAL INFO
 - ITA - 
@@ -85,6 +86,31 @@
 
 * PHONE BOOK JSON
 > The json file is formed as follows:
+```json
+{
+    "Comune X":  
+    {
+            "ag":[
+                {
+                    "nome":"TEST",
+                    "numero":"0123456789",
+                    "info":"TEST"
+                    }
+            ],
+            "fp":[],
+            "ip":[],
+            "co":[],
+            "ot":[]
+    }
+}
+```
+
+## REQUEST
+- ITA - 
+> Per qualsiasi richiesta sono a disposizione.
+
+- ENG - 
+> For any request I am available.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

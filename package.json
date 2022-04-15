@@ -26,5 +26,11 @@
     "electron-osx-prompt": "^1.4.1",
     "electron-squirrel-startup": "^1.0.0"
   },
-  "config": {}
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./src/ico/police.ico"
+      }
+    }
+  }
 }

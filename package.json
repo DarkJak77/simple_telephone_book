@@ -9,7 +9,8 @@
     "package 64 Bit": "electron-forge package",
     "package 32 Bit": "electron-forge package --arch=ia32",
     "make 64 Bit": "electron-forge make",
-    "make 32 Bit": "electron-forge make --arch=ia32"
+    "make 32 Bit": "electron-forge make --arch=ia32",
+    "update": "npm update"
   },
   "keywords": [],
   "license": "ISC",
